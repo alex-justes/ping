@@ -1,0 +1,37 @@
+This is study program just to work out how works icmp-protocol. 
+It is working ping program with some features:
+    1) IP RECORD_ROUTE option.
+    2) Different command-line args("./ping --help" for more info, or you can read it below)
+
+This program contains few fragments from ping.c fron iputils package.
+They are: 
+    1) in_cksum function to calculate ip and icmp checksum
+    2) "Some magic" to get source ip addr
+
+Usage: ping [-c num] [-w time] [-q] [-D time]
+            [-h] [-R] [-t] -d target
+
+Description of command-line args:
+    1) -c num --count num               -- Send $num probes
+    2) -w time --time-to-wait time      -- How long we should wait after all probes sent to mark packet as losted. (It wait for a single echo_reply packet for $time in milliseconds, if $time expired it decides, that all packets with no echo_reply are lost, if even one echo_reply received, timeout restores and it wait for $time milliseconds again)
+    3) -q --quit                        -- Don't produce any messages, except first line with "PING: target" and final statistics.
+    4) -D time --delay time             -- How long we should wait before sending next probe in milliseconds
+    5) -h --help                        -- Shows short help about usage and command-line args
+    6) -R --record_route                -- Tells "ping" to add IP RECORD_ROUTE option in the IP header. (Note that only 9 ip's can be stored in the header)
+    7) -t num --ttl num                 -- Sets ttl to $num
+    8) -d target --destination target   -- Set target to ping. This arg is required!
+
+If you've found any bug, please send me bug-report, which contains:
+    1) Your name/nick
+    2) Command line args to ping, which caused a bug
+    3) Expected result
+    4) Actual result
+
+My e-mail to report bugs: alex_justes@hackerdom.ru
+I'll contact anyone, who've found any bugs and include them as "Bug hunters" in this README :)
+
+Maintainer:
+    Alexey Titov <alex_justes@hackerdom.ru>
+
+Bug hunters:
+    No bugs found yet by other people.

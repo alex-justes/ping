@@ -14,7 +14,7 @@ Usage: ping [-c num] [-w time] [-q] [-D time]
 Description of command-line args:
     1) -c num --count num               -- Send $num probes
     2) -w time --time-to-wait time      -- How long we should wait after all probes sent to mark packet as losted. (It wait for a single echo_reply packet for $time in milliseconds, if $time expired it decides, that all packets with no echo_reply are lost, if even one echo_reply received, timeout restores and it wait for $time milliseconds again)
-    3) -q --quit                        -- Don't produce any messages, except first line with "PING: target" and final statistics.
+    3) -q --quiet                        -- Don't produce any messages, except first line with "PING: target" and final statistics.
     4) -D time --delay time             -- How long we should wait before sending next probe in milliseconds
     5) -h --help                        -- Shows short help about usage and command-line args
     6) -R --record_route                -- Tells "ping" to add IP RECORD_ROUTE option in the IP header. (Note that only 9 ip's can be stored in the header)
